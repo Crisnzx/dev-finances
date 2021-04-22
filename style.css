@@ -61,9 +61,40 @@ a:hover {
     color: #3dd705;
 }
 
+button {
+
+    height:50px;
+    border: none;
+    color: white;
+    border-radius:0.25rem;
+    background-color: #49aa26;
+    cursor:pointer;
+}
+
+button:hover {
+
+    background-color: #3dd705;
+}
+
 .button.new {
     display: inline-block;
     margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+
+    color: #e92929;
+    border: 2px #e92929 solid;
+    border-radius: 0.25rem;
+    height: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    opacity:0.7;
+}
+
+.button.cancel:hover {
+    opacity:1;
 }
 
 /* HEADER ========================*/
@@ -221,6 +252,7 @@ td.income {
 
     opacity:0;
     visibility: hidden;
+    z-index: 100;
 }
 
 .modal-overlay.active {
@@ -234,6 +266,45 @@ td.income {
     background-color: #f0f2f5;
     padding: 2.4rem;
     position: relative;
+    width: min(90vw, 500px);
+    
+}
+
+/* FORM ========================*/
+
+#form h2 {
+    margin-top:0;
+}
+
+#form form input {
+
+    border:none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    
+}
+
+.input-group{
+    margin-top: 0.8rem;
+}
+
+#form form small {
+    opacity:0.6;
+}
+
+.input-group.actions {
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-group.actions .button.cancel,
+.input-group.actions button {
+
+    width:48%;
+
 }
 
 /* FOOTER ========================*/

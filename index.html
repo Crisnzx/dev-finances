@@ -50,7 +50,9 @@
         </section>
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" class="button new">+ Nova Transação</a>
+            <a href="#" 
+            onclick="modal.open()"
+            class="button new">+ Nova Transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -91,12 +93,46 @@
         </section>
 
     </main>
-    <div class="modal-overlay active">
+    <div class="modal-overlay">
         <div class="modal">
             <div id="form">
-                <h2>Nova transação</h2>
+                <h2>Nova Transação</h2>
                 <form action="">
-
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input 
+                            type="text"
+                            id="description"
+                            name="description" 
+                            placeholder="Descrição"
+                        > 
+<!-- name é o nome do atributo value é o valor do atributo-->
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder="0.00"
+                            step="0.01"
+                        >
+                    </div>
+                    <small class="help">Use o sinal negativo (-) para despesas e vírgula (,) para casas decimais</small>
+                    <div class="input-group">
+                        <label class="sr-only" for="">Data</label>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                        >
+                    </div>
+                    <div class="input-group actions">
+                        <a href="#" 
+                        onclick="modal.close()"
+                        class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -104,6 +140,18 @@
     <footer>
         <p>dev.finance$</p>
     </footer>
+
+    <script>
+        const modal = {
+            open(){ //adiciona a classe active ao modal
+                document.querySelector('.modal-overlay').classList.add('active');
+                
+            },
+            close(){ //remove a classe active do modal
+                document.querySelector('.modal-overlay.active').classList.remove('active');
+            }
+        }
+    </script>
 </body>
 
 </html>
