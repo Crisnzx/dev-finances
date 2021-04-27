@@ -60,7 +60,9 @@ a {
 a:hover {
     color: #3dd705;
 }
-
+td .remove-button {
+    cursor: pointer;
+}
 button {
 
     height:50px;
